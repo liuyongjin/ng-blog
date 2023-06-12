@@ -13,6 +13,7 @@ import { zh_CN } from 'ng-zorro-antd/i18n';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { LayoutModule } from './layout/layout.module';
 import { SharedModule } from './shared/shared.module';
 
 registerLocaleData(zh);
@@ -39,6 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,
+    LayoutModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],

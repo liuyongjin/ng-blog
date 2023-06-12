@@ -15,8 +15,8 @@ export class HomeTopComponent implements OnInit {
   }
 
   init() {
-    this.configService.getConfig().subscribe((res: Config) => {
-      this.config = res.data.data as ConfigItem[];
-    });
+    // this.configService.getConfig().subscribe((res: Config) => {
+    //   this.config = res.data.data as ConfigItem[];
+    // });
   }
 }

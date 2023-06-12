@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { BASE_CONFIG } from '@app/constant';
-import { Article,ArticleItem } from '@app/core/interface/article';
+import { Article, ArticleItem } from '@app/core/interface/article';
 import { ArticleService } from '@app/core/services';
 
 @Component({
@@ -28,9 +28,9 @@ export class HomeComponent implements OnInit {
 
   init(): void {
     this.article_loading = true;
-    this.articlesService.getRandomArticle().subscribe((res: Article) => {
-      this.article = res.data.data as ArticleItem[];
-      this.article_loading = false;
-    });
+    // this.articlesService.getRandomArticle().subscribe((res: Article) => {
+    //   this.article = res.data.data as ArticleItem[];
+    //   this.article_loading = false;
+    // });
   }
 }

@@ -1,0 +1,29 @@
+@import '../../../styles/mixins';
+@include b(header){
+    position: fixed;
+    top: 0;
+    left: 200px;
+    width: 80%;
+    width: calc(100vw - 200px);
+    height: 64px;
+    line-height: 64px;
+    padding: 0 60px 0 20px;
+    box-shadow: 1px 1px 1px rgba(#000000,0.1);
+    background-color: rgb(255,255,255);
+    transition: top 1s;
+    color: $font-color;
+    z-index: 1000;
+    @include e(right){
+        text-align: right;
+    }
+    @include e(github){
+        color: $title-color;
+        font-size: 25px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    [nz-dropdown]{
+        color: $title-color;
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,41 @@
+<div
+  class="ng-blog-search ng-blog-flex ng-blog-flex--a-center ng-blog-flex--j-center"
+>
+  <i nz-icon nzType="search" nzTheme="outline"></i>
+  <nz-input-group [nzSuffix]="suffixTemplate">
+    <input
+      type="text"
+      nz-input
+      [(ngModel)]="searchValue"
+      (input)="onInput($event)"
+      [nzAutocomplete]="auto"
+      [placeholder]="'SEARCH_ARTICLE' | translate"
+    />
+    <nz-autocomplete nzBackfill #auto>
+      <a *ngFor="let option of article" [routerLink]="['/detail', option.id]">
+        <nz-auto-option [nzValue]="option.title">
+          {{ option.title }}
+        </nz-auto-option>
+      </a>
+    </nz-autocomplete>
+  </nz-input-group>
+  <ng-template #suffixTemplate>
+    <!-- <i
+      nz-icon
+      nz-tooltip
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="searchValue"
+      (click)="searchValue = ''"
+    >
+    </i> -->
+    <span
+      nz-icon
+      nz-tooltip
+      nzTheme="fill"
+      nzType="close-circle"
+      nzTheme="outline"
+      *ngIf="searchValue"
+    ></span>
+  </ng-template>
+</div>
