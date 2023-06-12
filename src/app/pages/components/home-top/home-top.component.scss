@@ -1,0 +1,38 @@
+@import '../../../styles/mixins';
+
+@include b(top) {
+    min-height: 160px;
+    margin-bottom: 50px;
+    @include e(item) {
+        margin-bottom: 10px;
+        h3 {
+            height: 40px;
+            line-height: 40px;
+            color: $font-color;
+        }
+
+        h2 {
+            height: 50px;
+            line-height: 50px;
+            color: $title-color;
+            font-size: 32px;
+            font-weight: 400;
+        }
+
+        p {
+            height: 35px;
+            line-height: 35px;
+        }
+
+        padding: 15px;
+        padding-bottom: 0;
+        background-color: $white;
+    }
+
+    @include e(footer) {
+        margin-top: 10px;
+        height: 35px;
+        line-height: 35px;
+        border-top: 1px solid $d-color;
+    }
+}

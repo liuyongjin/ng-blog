@@ -1,0 +1,32 @@
+<aside class="ng-blog-aside">
+  <div class="ng-blog-aside__up">
+    <nz-avatar [nzSize]="120" nzSrc="/assets/images/yasuo.jpg"></nz-avatar>
+  </div>
+  <div class="ng-blog-aside__down">
+    <h3>L&nbsp;Y&nbsp;J</h3>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/home" routerLinkActive="active">
+            {{ "HOME" | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/pigeonhole" routerLinkActive="active">
+            {{ "PIGEONHOLE" | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/tag" routerLinkActive="active">
+            {{ "TAG" | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about-us" routerLinkActive="active">
+            {{ "ABOUT_US" | translate }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
