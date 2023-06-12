@@ -1,8 +1,8 @@
-import { Inject, Component, OnInit } from '@angular/core';
-import { ArticleService } from '@app/core/services';
-import { ArticleItem, Article } from '@app/core/interface/article';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { BASE_CONFIG } from '@app/constant';
+import { Article,ArticleItem } from '@app/core/interface/article';
+import { ArticleService } from '@app/core/services';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { BASE_CONFIG } from '@app/constant';
 export class HomeComponent implements OnInit {
   public article: ArticleItem[] = [];
   public base_img_url: string;
-  public article_loading: boolean = true;
+  public article_loading = true;
   constructor(
     private articlesService: ArticleService,
     @Inject('BASE_CONFIG') private config: BASE_CONFIG,

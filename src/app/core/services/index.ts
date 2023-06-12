@@ -1,5 +1,5 @@
 import { ArticleService } from './article.service';
-import { TagService } from './tag.service';
 import { ConfigService } from './config.service';
+import { TagService } from './tag.service';
 
-export { ArticleService, TagService, ConfigService };
+export { ArticleService, ConfigService,TagService };

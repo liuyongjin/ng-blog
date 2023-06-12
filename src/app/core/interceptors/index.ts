@@ -1,16 +1,16 @@
-import { Injectable, Injector } from '@angular/core';
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
+  HttpHeaderResponse,
   HttpInterceptor,
   HttpRequest,
-  HttpErrorResponse,
-  HttpHeaderResponse,
   HttpResponse,
 } from '@angular/common/http';
+import { Injectable, Injector } from '@angular/core';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Observable, of } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
-import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Injectable()
 export class BaseInterceptor implements HttpInterceptor {
