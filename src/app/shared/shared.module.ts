@@ -9,7 +9,6 @@ import { TopComponent } from '@app/shared/components/top/top.component';
 import { Error404Component } from '@app/shared/pages/error404/error404.component';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { IconsProviderModule } from '../icons-provider.module';
 import { FormatPipe } from '../pipe/format.pipe';
 import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 
@@ -37,7 +36,6 @@ const THIRDMODULES: Array<Type<void>> = [TranslateModule];
     RouterModule,
     CommonModule,
     FormsModule,
-    IconsProviderModule,
     ...DIRECTIVES,
     ...PIPES,
     ...COMPONENTS,

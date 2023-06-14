@@ -9,9 +9,9 @@
     </div>
     <div
       nz-col
-      nzSpan="8"
-      nzOffset="8"
-      class="ng-blog-header__right ng-blog-flex ng-blog-flex--j-center"
+      nzSpan="12"
+      nzOffset="4"
+      class="ng-blog-header__right ng-blog-flex ng-blog-flex--j-right"
     >
       <app-search
         class="ng-blog-flex ng-blog-flex--a-center ng-blog-flex--j-center"
@@ -21,19 +21,29 @@
         target="_blank"
         class="ng-blog-header__github"
       >
-        <i nz-icon nzType="github" nzTheme="outline"></i>
+        <span nz-icon nzType="github" nzTheme="outline"></span>
       </a>
-      <a nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'">
+      <a nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'">
         <i nz-icon nzType="global" nzTheme="outline"></i>
       </a>
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu nzSelectable>
-          <!-- <li nz-menu-item (click)="selectLanguage('zh_CN')">
-            <a>中文</a>
+          <li
+            nz-menu-item
+            [nzSelected]="currentLang === 'zh_CN'"
+            role="none"
+            (click)="selectLanguage('zh_CN')"
+          >
+            <span>中文</span>
           </li>
-          <li nz-menu-item (click)="selectLanguage('en_US')">
-            <a>英文</a>
-          </li> -->
+          <li
+            nz-menu-item
+            [nzSelected]="currentLang === 'en_US'"
+            role="none"
+            (click)="selectLanguage('en_US')"
+          >
+            <span>English</span>
+          </li>
         </ul>
       </nz-dropdown-menu>
     </div>

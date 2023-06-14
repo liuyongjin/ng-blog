@@ -1,36 +1,36 @@
-@import '../../../styles/mixins';
+@import "../../../styles/mixins";
 
-@include b(aside){
-    text-align: center;
-    @include e(up){
-        height: 180px;
+@include b(aside) {
+  text-align: center;
+  @include e(up) {
+    height: 180px;
+    background-color: $font-color2;
+    position: relative;
+    nz-avatar {
+      bottom: -40px;
+      left: 50%;
+      margin-left: -60px;
+      position: absolute;
+    }
+  }
+  @include e(down) {
+    h3 {
+      font-size: 40px;
+      color: $white;
+      margin-top: 60px;
+    }
+    ul > li {
+      line-height: 30px;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: $white;
+      }
+      a.active {
         background-color: $font-color2;
-        position: relative;
-        nz-avatar{
-            bottom: -40px;
-            left: 50%;
-            margin-left: -60px;
-            position: absolute;
-        }
+        color: $white;
+      }
     }
-    @include e(down){
-        h3{
-            font-size: 40px;
-            color: $title-color;
-            margin-top: 60px;
-        }
-        ul>li{
-            line-height: 30px;
-            a{
-                display: block;
-                width: 100%;
-                height: 100%;
-                color: $font-color;
-            }
-            a.active{
-                background-color: $font-color2;
-                color: $white;
-            }
-        }
-    }
+  }
 }
