@@ -31,13 +31,23 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.searchStream
       .pipe(debounceTime(400), distinctUntilChanged())
       .subscribe(async (value) => {
-        console.log(value);
         // const res = await this.articlesService.searchArticle(value).toPromise();
         // this.article = res.data.data as ArticleItem[];
+        if (value) {
+          this.article = [
+            {
+              id: 1,
+              title: value,
+              create_time: new Date().toLocaleString(),
+            },
+          ];
+        }
       });
   }
-  onInput(e: any): void {
-    const value = e?.target?.value;
+
+  onInput(e: Event): void {
+    const target = e.target as HTMLInputElement;
+    const value = target.value;
     this.searchStream.next(value);
   }
 }

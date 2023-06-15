@@ -1,18 +1,21 @@
-@import '../../../styles/mixins';
+@import "../../../styles/mixins";
 
-@include b(search){
-    i{
-        font-size: 20px;
-    }
-    input{
-        transition: all 0.3s;
-        margin-left: 10px;
-        width: 200px;
-        border-left: 0;
-        border-top: 0;
-        border-right: 0;
-        box-shadow: none !important;
-        border-radius: 0;
-        background: transparent;
-    }
+@include b(search) {
+  i {
+    font-size: 20px;
+  }
+  @include e(close-icon) {
+    cursor: pointer;
+  }
+  input {
+    transition: all 0.3s;
+    margin-left: 10px;
+    width: 200px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    box-shadow: none !important;
+    border-radius: 0;
+    background: transparent;
+  }
 }
