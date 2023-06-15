@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Article, ArticleItem } from '@app/core/interface/article';
 // import { Tag } from '@app/core/interface/tag';
 import { TagService } from '@app/core/services';
@@ -16,11 +15,8 @@ export class TagComponent implements OnInit {
   public tag = [];
   constructor(
     private tagService: TagService,
-    private articlesService: ArticleService,
-    private titleService: Title
-  ) {
-    this.titleService.setTitle('标签');
-  }
+    private articlesService: ArticleService
+  ) {}
 
   ngOnInit() {
     this.init();

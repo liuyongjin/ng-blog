@@ -10,6 +10,7 @@ import { Error404Component } from '@app/shared/pages/error404/error404.component
 import { TranslateModule } from '@ngx-translate/core';
 
 import { FormatPipe } from '../pipe/format.pipe';
+import { FormatRunningTimePipe } from '../pipe/format-running-time.pipe';
 import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 
 const COMPONENTS: Array<Type<void>> = [
@@ -19,7 +20,7 @@ const COMPONENTS: Array<Type<void>> = [
   SearchComponent,
   TopComponent,
 ];
-const PIPES: Array<Type<void>> = [FormatPipe];
+const PIPES: Array<Type<void>> = [FormatPipe, FormatRunningTimePipe];
 const DIRECTIVES: Array<Type<void>> = [];
 const THIRDMODULES: Array<Type<void>> = [TranslateModule];
 

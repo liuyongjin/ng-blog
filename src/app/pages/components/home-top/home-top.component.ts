@@ -7,7 +7,7 @@ import { ConfigService } from '@app/core/services';
   styleUrls: ['./home-top.component.scss'],
 })
 export class HomeTopComponent implements OnInit {
-  public config: ConfigItem[] = [];
+  public config: ConfigItem[] | undefined;
   constructor(private configService: ConfigService) {}
 
   ngOnInit() {
