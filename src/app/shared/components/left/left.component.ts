@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs';
 
 @Component({
@@ -9,21 +10,25 @@ import { filter } from 'rxjs';
   styleUrls: ['./left.component.scss'],
 })
 export class LeftComponent {
-  constructor(private router: Router, private titleService: Title) {
+  constructor(
+    private router: Router,
+    private titleService: Title,
+    public translate: TranslateService
+  ) {
     this.router.events
       .pipe(filter((e) => e instanceof NavigationEnd))
       .subscribe((info: any) => {
         if (info.urlAfterRedirects.includes('/home')) {
-          this.titleService.setTitle('首页');
+          this.titleService.setTitle(this.translate.instant('HOME'));
         }
         if (info.urlAfterRedirects.includes('/pigeonhole')) {
-          this.titleService.setTitle('归档');
+          this.titleService.setTitle(this.translate.instant('PIGEONHOLE'));
         }
         if (info.urlAfterRedirects.includes('/tag')) {
-          this.titleService.setTitle('标签');
+          this.titleService.setTitle(this.translate.instant('TAG'));
         }
         if (info.urlAfterRedirects.includes('/about-us')) {
-          this.titleService.setTitle('关于我');
+          this.titleService.setTitle(this.translate.instant('ABOUT_US'));
         }
       });
   }

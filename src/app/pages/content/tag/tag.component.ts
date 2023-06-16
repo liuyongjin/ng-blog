@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Article, ArticleItem } from '@app/core/interface/article';
-// import { Tag } from '@app/core/interface/tag';
+import { ArticleItem } from '@app/core/interface/article';
+import { TagItem } from '@app/core/interface/tag';
 import { TagService } from '@app/core/services';
 import { ArticleService } from '@app/core/services';
 
@@ -12,7 +12,7 @@ import { ArticleService } from '@app/core/services';
 export class TagComponent implements OnInit {
   public article: ArticleItem[] = [];
   public title = '';
-  public tag = [];
+  public tag: TagItem[] = [];
   constructor(
     private tagService: TagService,
     private articlesService: ArticleService
@@ -23,6 +23,17 @@ export class TagComponent implements OnInit {
   }
 
   public init(): void {
+    this.tag = [
+      {
+        id: 1,
+        name: 'tag1',
+        des: 'des',
+        color: '#ffffff',
+        bg_color: '#333333',
+        create_time: new Date().toDateString(),
+        update_time: new Date().toDateString(),
+      },
+    ];
     // this.tagService.getTag().subscribe((res: Tag) => {
     //   this.tag = res.data.data;
     //   //默认获取第一个标签的文章
@@ -39,8 +50,38 @@ export class TagComponent implements OnInit {
   }
 
   getArticle(id: number): void {
-    this.articlesService.searchArticleByTag(id).subscribe((res: Article) => {
-      this.article = res.data.data as ArticleItem[];
-    });
+    this.article = [
+      {
+        id: 1,
+        title: 'test',
+        create_time: new Date().toDateString(),
+        browse_count: 1,
+        comment_count: 1,
+        content: 'content',
+        des: 'des',
+        main_img: '/assets/images/yasuo.jpg',
+        praise_count: 1,
+        tags: 'tags',
+        update_time: new Date().toDateString(),
+        status: 1,
+      },
+      {
+        id: 2,
+        title: 'test',
+        create_time: new Date().toDateString(),
+        browse_count: 1,
+        comment_count: 1,
+        content: 'content',
+        des: 'des',
+        main_img: '/assets/images/yasuo.jpg',
+        praise_count: 1,
+        tags: 'tags',
+        update_time: new Date().toDateString(),
+        status: 1,
+      },
+    ];
+    // this.articlesService.searchArticleByTag(id).subscribe((res: Article) => {
+    //   this.article = res.data.data as ArticleItem[];
+    // });
   }
 }

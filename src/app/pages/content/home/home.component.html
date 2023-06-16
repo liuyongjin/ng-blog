@@ -6,7 +6,7 @@
         [nzDataSource]="article"
         [nzLoading]="article_loading"
         [nzRenderItem]="item"
-        [nzGrid]="{ gutter: 16, xs: 24, sm: 12, md: 8, lg: 8, xl: 6 }"
+        [nzGrid]="{ gutter: 12, xs: 24, sm: 12, md: 8, lg: 8, xl: 6 }"
       >
         <ng-template #item let-item>
           <nz-list-item [nzContent]="nzContent">
@@ -30,14 +30,18 @@
                       <i nz-icon nzType="eye" nzTheme="outline"></i>
                     </div>
                     &nbsp;&nbsp;
-                    <div>浏览{{ item.browse_count }}次</div>
+                    <div>{{ "BROWSE" | translate }}{{ item.browse_count }}</div>
                   </div>
                 </nz-card>
                 <ng-template #avatarTemplate>
                   <nz-avatar nzSrc="/assets/images/yasuo.jpg"> </nz-avatar>
                 </ng-template>
                 <ng-template #coverTemplate>
-                  <img alt="example" [src]="base_img_url + item.main_img" />
+                  <img
+                    style="width: 100%; height: 120px"
+                    alt="example"
+                    [src]="base_img_url + item.main_img"
+                  />
                 </ng-template>
               </a>
             </ng-template>
@@ -46,7 +50,11 @@
       </nz-list>
     </div>
   </div>
-  <div class="ng-blog-home__refresh" (click)="init()">
+  <div
+    class="ng-blog-home__refresh"
+    (click)="init()"
+    *ngIf="article.length > 0"
+  >
     <p>
       <i
         nz-icon

@@ -6,13 +6,13 @@
   [nzTitle]=""
   (nzOnClose)="toggle()"
 >
-  <!-- <div class="ng-blog-handler" (click)="toggle()">
+  <div class="ng-blog-handler" (click)="toggle()">
     <i *ngIf="!visible" nz-icon nzType="search" nzTheme="outline"></i>
     <i *ngIf="visible" nz-icon nzType="close" nzTheme="outline"></i>
-  </div> -->
+  </div>
   <app-search></app-search>
   <div class="ng-blog-tags ng-blog-flex ng-blog-flex--wrap">
-    <!-- <div
+    <div
       class="ng-blog-tags__tag"
       *ngFor="let item of tag"
       (click)="clickHandle(item)"
@@ -23,7 +23,8 @@
           'border-color':
             'transparent ' + item.bg_color + ' transparent transparent'
         }"
-      ></span>
+      >
+      </span>
       <span
         [ngStyle]="{ color: item.color, 'background-color': item.bg_color }"
         style="display: inline-block; height: 22px; padding: 0 7px"
@@ -32,6 +33,6 @@
           {{ item.name }}
         </span>
       </span>
-    </div> -->
+    </div>
   </div>
 </nz-drawer>

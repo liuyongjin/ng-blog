@@ -1,8 +1,7 @@
 @import "../../../styles/mixins";
 
 @include b(top) {
-  min-height: 160px;
-  margin-bottom: 50px;
+  margin-bottom: 24px;
   @include e(item) {
     margin-bottom: 10px;
     h3 {

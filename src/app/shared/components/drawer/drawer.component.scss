@@ -1,47 +1,43 @@
-@import '../../../styles/mixins';
+@import "../../../styles/mixins";
 
 @include b(drawer) {
 }
 
-@include b(tags){
-    margin-top: 20px;
-    @include e(tag){
-        display: block;
-        margin-bottom: 5px;
-        margin-top: 5px;
-        margin-right: 5px;
-        cursor: pointer;
-        pointer-events: auto;
-        i{
-            margin-left: -8px;
-        }
-    }
-    @include e(triangle){
-        display: inline-block;
-        width: 0;
-        height: 0;
-        border: 11px solid;
-        vertical-align: top;
-    }
-}
-
-
-
-
-
-@include b(handler) {
-    position: fixed;
-    right: 300px;
-    top: 300px;
-    z-index: 1000;
-    background-color: $ng-primary;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 25px;
-    text-align: center;
-    border-radius: 4px 0 0 4px;
+@include b(tags) {
+  margin-top: 20px;
+  @include e(tag) {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
     cursor: pointer;
     pointer-events: auto;
-    color: $white;
+    i {
+      margin-left: -8px;
+    }
+  }
+  @include e(triangle) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 11px solid;
+    vertical-align: top;
+  }
+}
+
+@include b(handler) {
+  position: fixed;
+  right: 300px;
+  top: 300px;
+  z-index: 1000;
+  background-color: $ng-primary;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 4px 0 0 4px;
+  cursor: pointer;
+  pointer-events: auto;
+  color: $white;
 }

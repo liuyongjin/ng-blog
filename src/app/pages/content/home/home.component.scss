@@ -1,9 +1,7 @@
 @import "../../../styles/mixins";
 
 @include b(home) {
-  min-height: 90vh;
-  min-height: calc(100vh - 114px);
-
+  min-height: 100%;
   @include e(content) {
     margin-bottom: 30px;
   }

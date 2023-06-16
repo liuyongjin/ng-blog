@@ -3,6 +3,7 @@ import { NgModule, Type } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DrawerComponent } from '@app/shared/components/drawer/drawer.component';
+import { HomeTopComponent } from '@app/shared/components/home-top/home-top.component';
 import { LeftComponent } from '@app/shared/components/left/left.component';
 import { SearchComponent } from '@app/shared/components/search/search.component';
 import { TopComponent } from '@app/shared/components/top/top.component';
@@ -16,6 +17,7 @@ import { SHARED_ZORRO_MODULES } from './shared-zorro.module';
 const COMPONENTS: Array<Type<void>> = [
   Error404Component,
   DrawerComponent,
+  HomeTopComponent,
   LeftComponent,
   SearchComponent,
   TopComponent,
