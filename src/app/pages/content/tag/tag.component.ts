@@ -12,7 +12,17 @@ import { ArticleService } from '@app/core/services';
 export class TagComponent implements OnInit {
   public article: ArticleItem[] = [];
   public title = '';
-  public tag: TagItem[] = [];
+  public tag: TagItem[] = [
+    {
+      id: 1,
+      name: 'tag1',
+      des: 'des',
+      color: '#ffffff',
+      bg_color: '#333333',
+      create_time: new Date().toDateString(),
+      update_time: new Date().toDateString(),
+    },
+  ];
   constructor(
     private tagService: TagService,
     private articlesService: ArticleService
@@ -23,17 +33,8 @@ export class TagComponent implements OnInit {
   }
 
   public init(): void {
-    this.tag = [
-      {
-        id: 1,
-        name: 'tag1',
-        des: 'des',
-        color: '#ffffff',
-        bg_color: '#333333',
-        create_time: new Date().toDateString(),
-        update_time: new Date().toDateString(),
-      },
-    ];
+    this.title = 'tag1';
+    this.getArticle(1);
     // this.tagService.getTag().subscribe((res: Tag) => {
     //   this.tag = res.data.data;
     //   //默认获取第一个标签的文章
@@ -61,7 +62,17 @@ export class TagComponent implements OnInit {
         des: 'des',
         main_img: '/assets/images/yasuo.jpg',
         praise_count: 1,
-        tags: 'tags',
+        tags: [
+          {
+            id: 1,
+            name: 'tag1',
+            des: 'des',
+            color: '#ffffff',
+            bg_color: '#333333',
+            create_time: new Date().toDateString(),
+            update_time: new Date().toDateString(),
+          },
+        ],
         update_time: new Date().toDateString(),
         status: 1,
       },
@@ -75,7 +86,17 @@ export class TagComponent implements OnInit {
         des: 'des',
         main_img: '/assets/images/yasuo.jpg',
         praise_count: 1,
-        tags: 'tags',
+        tags: [
+          {
+            id: 1,
+            name: 'tag1',
+            des: 'des',
+            color: '#ffffff',
+            bg_color: '#333333',
+            create_time: new Date().toDateString(),
+            update_time: new Date().toDateString(),
+          },
+        ],
         update_time: new Date().toDateString(),
         status: 1,
       },

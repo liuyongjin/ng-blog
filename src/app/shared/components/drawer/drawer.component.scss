@@ -4,7 +4,7 @@
 }
 
 @include b(tags) {
-  margin-top: 20px;
+  margin-top: 12px;
   @include e(tag) {
     display: block;
     margin-bottom: 5px;
@@ -13,7 +13,7 @@
     cursor: pointer;
     pointer-events: auto;
     i {
-      margin-left: -8px;
+      margin-left: -12px;
     }
   }
   @include e(triangle) {
@@ -27,9 +27,9 @@
 
 @include b(handler) {
   position: fixed;
-  right: 300px;
+  right: 0;
   top: 300px;
-  z-index: 1000;
+  z-index: 9999;
   background-color: $ng-primary;
   width: 40px;
   height: 40px;
@@ -40,4 +40,9 @@
   cursor: pointer;
   pointer-events: auto;
   color: $white;
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@include b(handler-show) {
+  right: 300px;
 }

@@ -19,7 +19,10 @@
       [placeholder]="'SEARCH_ARTICLE' | translate"
     />
     <nz-autocomplete nzBackfill #auto>
-      <a *ngFor="let option of article" [routerLink]="['/detail', option.id]">
+      <a
+        *ngFor="let option of article"
+        [routerLink]="['/pages/content/detail', option.id]"
+      >
         <nz-auto-option [nzValue]="option.title">
           {{ option.title }}
         </nz-auto-option>

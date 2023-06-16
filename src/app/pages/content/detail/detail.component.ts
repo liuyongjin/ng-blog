@@ -26,17 +26,41 @@ export class DetailComponent implements OnInit {
   }
 
   init() {
-    // this.route.paramMap.subscribe((params) => {
-    //   this.id = Number(params.get('id'));
-    //   this.browseHandle();
-    //   this.getDetail();
-    // });
+    this.route.paramMap.subscribe((params) => {
+      this.id = Number(params.get('id'));
+      // this.browseHandle();
+      this.getDetail();
+    });
   }
   getDetail(): void {
-    this.articlesService.getArticleDetail(this.id).subscribe((res: Article) => {
-      this.article = res.data.data as ArticleItem;
-      this.titleService.setTitle(this.article.title);
-    });
+    this.article = {
+      id: 1,
+      title: 'test',
+      create_time: new Date().toDateString(),
+      browse_count: 1,
+      comment_count: 1,
+      content: 'content',
+      des: 'des',
+      main_img: '/assets/images/yasuo.jpg',
+      praise_count: 1,
+      tags: [
+        {
+          id: 1,
+          name: 'tag1',
+          des: 'des',
+          color: '#ffffff',
+          bg_color: '#333333',
+          create_time: new Date().toDateString(),
+          update_time: new Date().toDateString(),
+        },
+      ],
+      update_time: new Date().toDateString(),
+      status: 1,
+    };
+    // this.articlesService.getArticleDetail(this.id).subscribe((res: Article) => {
+    //   this.article = res.data.data as ArticleItem;
+    //   this.titleService.setTitle(this.article.title);
+    // });
   }
   //处理文章内容
   securityHTML(strHTML: any) {

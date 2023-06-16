@@ -11,7 +11,7 @@
         <ng-template #item let-item>
           <nz-list-item [nzContent]="nzContent">
             <ng-template #nzContent>
-              <a [routerLink]="['/detail', item.id]">
+              <a [routerLink]="['/pages/content/detail', item.id]">
                 <nz-card
                   [nzTitle]="item.title"
                   [nzHoverable]="true"

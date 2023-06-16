@@ -6,7 +6,7 @@
       </h3>
       <ul>
         <li *ngFor="let item of article">
-          <a [routerLink]="['/detail', item.id]"
+          <a [routerLink]="['/pages/content/detail', item.id]"
             ><span>{{ item.create_time | format }}</span
             >&nbsp;&nbsp;{{ item.title }}&nbsp;&nbsp;<i
               nz-icon

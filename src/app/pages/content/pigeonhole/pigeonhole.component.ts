@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from '@app/core/interface/article';
+import { ArticleItem } from '@app/core/interface/article';
 import { ArticleService } from '@app/core/services';
 
 @Component({
@@ -8,12 +8,114 @@ import { ArticleService } from '@app/core/services';
   styleUrls: ['./pigeonhole.component.scss'],
 })
 export class PigeonholeComponent implements OnInit {
-  public article: any = {};
-  public ObjectKeys = Object.keys;
+  public article: { [key: string]: ArticleItem[] } = {};
+  public article_times: string[] = [];
   constructor(private articlesService: ArticleService) {}
 
   ngOnInit() {
-    console.log(123);
+    this.article_times = ['2023', '2022'];
+    this.article = {
+      '2023': [
+        {
+          id: 1,
+          title: 'test',
+          create_time: new Date().toDateString(),
+          browse_count: 1,
+          comment_count: 1,
+          content: 'content',
+          des: 'des',
+          main_img: '/assets/images/yasuo.jpg',
+          praise_count: 1,
+          tags: [
+            {
+              id: 1,
+              name: 'tag1',
+              des: 'des',
+              color: '#ffffff',
+              bg_color: '#333333',
+              create_time: new Date().toDateString(),
+              update_time: new Date().toDateString(),
+            },
+          ],
+          update_time: new Date().toDateString(),
+          status: 1,
+        },
+        {
+          id: 2,
+          title: 'test',
+          create_time: new Date().toDateString(),
+          browse_count: 1,
+          comment_count: 1,
+          content: 'content',
+          des: 'des',
+          main_img: '/assets/images/yasuo.jpg',
+          praise_count: 1,
+          tags: [
+            {
+              id: 1,
+              name: 'tag1',
+              des: 'des',
+              color: '#ffffff',
+              bg_color: '#333333',
+              create_time: new Date().toDateString(),
+              update_time: new Date().toDateString(),
+            },
+          ],
+          update_time: new Date().toDateString(),
+          status: 1,
+        },
+      ],
+      '2022': [
+        {
+          id: 1,
+          title: 'test',
+          create_time: new Date().toDateString(),
+          browse_count: 1,
+          comment_count: 1,
+          content: 'content',
+          des: 'des',
+          main_img: '/assets/images/yasuo.jpg',
+          praise_count: 1,
+          tags: [
+            {
+              id: 1,
+              name: 'tag1',
+              des: 'des',
+              color: '#ffffff',
+              bg_color: '#333333',
+              create_time: new Date().toDateString(),
+              update_time: new Date().toDateString(),
+            },
+          ],
+          update_time: new Date().toDateString(),
+          status: 1,
+        },
+        {
+          id: 2,
+          title: 'test',
+          create_time: new Date().toDateString(),
+          browse_count: 1,
+          comment_count: 1,
+          content: 'content',
+          des: 'des',
+          main_img: '/assets/images/yasuo.jpg',
+          praise_count: 1,
+          tags: [
+            {
+              id: 1,
+              name: 'tag1',
+              des: 'des',
+              color: '#ffffff',
+              bg_color: '#333333',
+              create_time: new Date().toDateString(),
+              update_time: new Date().toDateString(),
+            },
+          ],
+          update_time: new Date().toDateString(),
+          status: 1,
+        },
+      ],
+    };
     // this.articlesService.getPigeonhole().subscribe((res: Article) => {
     //   this.article = res.data.data;
     // });
