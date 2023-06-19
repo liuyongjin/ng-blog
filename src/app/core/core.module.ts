@@ -9,7 +9,8 @@ import { BASE_CONFIG } from '@app/constant';
       useValue: {
         // base_url: 'http://blog.com/api/v1',
         // base_img_url: 'http://blog.com'
-        base_url: 'http://api.liuyongjin.cn/api/v1',
+        // base_url: 'http://api.liuyongjin.cn/api/v1',
+        base_url: 'http://api.liuyongjin.cn/api',
         base_img_url: 'http://api.liuyongjin.cn',
       } as BASE_CONFIG,
     },

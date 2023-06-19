@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NZ_CONFIG, NzConfig } from 'ng-zorro-antd/core/config';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
+import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    // 引入mock
+    ...(environment.modules || []),
     //i18n配置
     TranslateModule.forRoot({
       loader: {

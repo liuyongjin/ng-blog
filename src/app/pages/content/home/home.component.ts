@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { BASE_CONFIG } from '@app/constant';
-import { ArticleItem } from '@app/core/interface/article';
+import { Article, ArticleItem } from '@app/core/interface/article';
 import { ArticleService } from '@app/core/services';
 
 @Component({
@@ -75,10 +75,11 @@ export class HomeComponent implements OnInit {
         status: 1,
       },
     ];
-    // this.article_loading = true;
-    // this.articlesService.getRandomArticle().subscribe((res: Article) => {
-    //   this.article = res.data.data as ArticleItem[];
-    //   this.article_loading = false;
-    // });
+    this.article_loading = true;
+    this.articlesService.getRandomArticle().subscribe((res: Article) => {
+      console.log(res);
+      // this.article = res.data.data as ArticleItem[];
+      // this.article_loading = false;
+    });
   }
 }

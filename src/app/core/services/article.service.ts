@@ -40,10 +40,12 @@ export class ArticleService {
 
   //随机获取文章
   getRandomArticle(): Observable<Article> {
-    return this.http.post<Article>(
-      `${this.config.base_url}/article/randomList`,
-      {}
-    );
+    // return this.http.post<Article>(
+    //   // `${this.config.base_url}/article/randomList`,
+    //   '/api/article/randomList',
+    //   {}
+    // );
+    return this.http.post<Article>('/user', {});
   }
   //获取详情
   getArticleDetail(id: number): Observable<Article> {

@@ -39,6 +39,7 @@
     "@angular-eslint/template-parser": "16.0.3",
     "@angular/cli": "~16.0.5",
     "@angular/compiler-cli": "^16.0.0",
+    "@delon/mock": "^16.0.1",
     "@types/jasmine": "~4.3.0",
     "@typescript-eslint/eslint-plugin": "5.59.7",
     "@typescript-eslint/parser": "5.59.7",
