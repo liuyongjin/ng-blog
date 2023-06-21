@@ -20,7 +20,7 @@ export class BaseInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpHeaderResponse | HttpResponse<any> | HttpEvent<any>> {
-    //这里可以在请求中加参数
+    // 这里可以在请求中加参数
     const newReq = request.clone({});
     return next.handle(newReq).pipe(
       mergeMap((event: any) => {

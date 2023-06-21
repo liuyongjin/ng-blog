@@ -1,12 +1,12 @@
 import { TagItem } from './tag';
-export interface Article {
-  data: Result;
+export interface ArticleResult {
+  data: ArticleData;
   msg: string;
   errorCode: number;
 }
 
-export interface Result {
-  data: Array<ArticleItem> | object;
+export interface ArticleData {
+  data: Array<ArticleItem> | null | undefined;
   pageSize?: number;
   current?: number;
   total?: number;

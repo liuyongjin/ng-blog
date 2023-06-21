@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Article, ArticleItem } from '@app/core/interface/article';
+import { ArticleItem } from '@app/core/interface/article';
 import { ArticleService } from '@app/core/services';
 
 @Component({
@@ -69,14 +69,14 @@ export class DetailComponent implements OnInit {
 
   //浏览量加一
   browseHandle(): void {
-    this.articlesService.browse(this.id).subscribe((res: Article) => {});
+    // this.articlesService.browse(this.id).subscribe((res: Article) => {});
   }
   //点赞加一
   praiseHandle(): void {
-    this.articlesService.praise(this.id).subscribe((res) => {
-      if (res.errorCode === 0) {
-        this.getDetail();
-      }
-    });
+    // this.articlesService.praise(this.id).subscribe((res) => {
+    //   if (res.errorCode === 0) {
+    //     this.getDetail();
+    //   }
+    // });
   }
 }
