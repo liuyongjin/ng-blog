@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ArticleItem } from '@app/core/interface/article';
+import { ArticleItem, ArticleResult } from '@app/core/interface/article';
 import { ArticleService } from '@app/core/services';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
@@ -31,17 +31,11 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.searchStream
       .pipe(debounceTime(400), distinctUntilChanged())
       .subscribe(async (value) => {
-        // const res = await this.articlesService.searchArticle(value).toPromise();
-        // this.article = res.data.data as ArticleItem[];
-        if (value) {
-          this.article = [
-            {
-              id: 1,
-              title: value,
-              create_time: new Date().toLocaleString(),
-            },
-          ];
-        }
+        this.articlesService
+          .searchArticle({ title: value })
+          .subscribe((res: ArticleResult) => {
+            this.article = res?.data?.data || [];
+          });
       });
   }
 

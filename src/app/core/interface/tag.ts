@@ -1,10 +1,10 @@
-export interface Tag {
-  data: Result;
+export interface TagResult {
+  data: TagData;
   msg: string;
   errorCode: number;
 }
 
-export interface Result {
+export interface TagData {
   data: Array<TagItem>;
   pageSize?: number;
   current?: number;

@@ -1,19 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
-import { BASE_CONFIG } from '@app/constant';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Config } from '../interface/config';
+import { ConfigResult } from '../interface/config';
+import { BaseService, STAHttpOptions } from './base.service';
 @Injectable({
   providedIn: 'root',
 })
-export class ConfigService {
-  constructor(
-    @Inject('BASE_CONFIG') private config: BASE_CONFIG,
-    private http: HttpClient
-  ) {}
-  //获取详情
-  getConfig(): Observable<Config> {
-    return this.http.post<Config>(`${this.config.base_url}/config/index`, {});
+export class ConfigService extends BaseService {
+  // 获取详情
+  getConfig(req?: any, options?: STAHttpOptions): Observable<ConfigResult> {
+    return this.request('POST', '/config/index', {
+      body: req,
+      ...options,
+    });
   }
 }

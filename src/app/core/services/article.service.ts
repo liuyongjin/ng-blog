@@ -28,6 +28,18 @@ export class ArticleService extends BaseService {
   //     { title: title }
   //   );
   // }
+
+  // 搜索文章(名称)
+  searchArticle(
+    req?: any,
+    options?: STAHttpOptions
+  ): Observable<ArticleResult> {
+    return this.request('POST', '/article/searchArticle', {
+      body: req,
+      ...options,
+    });
+  }
+
   // //搜索文章(tag_id)
   // searchArticleByTag(tag_id: number): Observable<Article> {
   //   return this.http.post<Article>(

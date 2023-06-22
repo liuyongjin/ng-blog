@@ -1,10 +1,10 @@
-export interface Config {
-  data: Result;
+export interface ConfigResult {
+  data: ConfigData;
   msg: string;
   errorCode: number;
 }
 
-export interface Result {
+export interface ConfigData {
   data: Array<ConfigItem>;
   total?: number;
 }
