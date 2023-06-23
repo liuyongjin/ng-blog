@@ -4,7 +4,7 @@
       nz-icon
       nzType="read"
       nzTheme="outline"
-      style="margin-top: 4px; margin-right: 4px"
+      style="margin-top: 4px; margin-right: 12px"
     ></i>
     {{ article.title }}&nbsp;&nbsp;
     <span class="ng-blog-tags">
@@ -36,6 +36,7 @@
   ></div>
   <div class="ng-blog-detail__count ng-blog-flex ng-blog-flex--j-right">
     <nz-statistic
+      style="cursor: pointer"
       [nzValue]="article.praise_count"
       [nzPrefix]="prefixL"
       (click)="praiseHandle()"

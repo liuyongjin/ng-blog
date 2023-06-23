@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigItem,ConfigResult } from '@app/core/interface/config';
+import { ConfigItem, ConfigResult } from '@app/core/interface/config';
 import { ConfigService } from '@app/core/services';
 
 @Component({

@@ -5,6 +5,18 @@ export interface ArticleResult {
   errorCode: number;
 }
 
+export interface ArticleListResult {
+  data: { [key: string]: ArticleItem[] };
+  msg: string;
+  errorCode: number;
+}
+
+export interface ArticleItemResult {
+  data: ArticleItem;
+  msg: string;
+  errorCode: number;
+}
+
 export interface ArticleData {
   data: Array<ArticleItem> | null | undefined;
   pageSize?: number;
