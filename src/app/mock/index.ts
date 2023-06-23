@@ -12,7 +12,16 @@ for (let i = 0; i < total; i += 1) {
     create_time: Random.now('year'),
     browse_count: Random.integer(1, 1000),
     comment_count: Random.integer(1, 1000),
-    content: Random.cparagraph(20),
+    content:
+      '<p>' +
+      Random.cparagraph(20) +
+      '</p>' +
+      '<p>' +
+      Random.cparagraph(20) +
+      '</p>' +
+      '<p>' +
+      Random.cparagraph(20) +
+      '</p>',
     des: mock('@csentence'),
     main_img: Random.image(),
     praise_count: Random.integer(1, 1000),
