@@ -6,6 +6,7 @@ import {
   ArticleListResult,
   ArticleResult,
 } from '../interface/article';
+import { TagResult } from '../interface/tag';
 import { BaseService, STAHttpOptions } from './base.service';
 @Injectable({
   providedIn: 'root',
@@ -37,7 +38,7 @@ export class ArticleService extends BaseService {
   searchArticleByTag(
     req?: any,
     options?: STAHttpOptions
-  ): Observable<ArticleResult> {
+  ): Observable<TagResult> {
     return this.request('POST', '/article/searchArticleByTag', {
       body: req,
       ...options,

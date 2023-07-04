@@ -34,7 +34,7 @@ export interface ArticleItem {
   des?: string;
   main_img?: string;
   praise_count?: number;
-  tags?: TagItem[];
+  tags: TagItem[];
   update_time?: string;
   status?: number;
 }

@@ -17,6 +17,7 @@ export interface TagItem {
   des: string;
   color: string;
   bg_color: string;
+  [key: string]: any;
   create_time?: string;
   update_time?: string;
 }

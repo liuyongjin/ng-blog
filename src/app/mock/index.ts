@@ -1,4 +1,5 @@
 import { ArticleItem } from '@app/core/interface/article';
+import { TagItem } from '@app/core/interface/tag';
 import { MockRequest } from '@delon/mock';
 import { mock, Random } from 'mockjs';
 
@@ -119,7 +120,10 @@ function getPigeonhole(req: MockRequest) {
 }
 
 function getTag(req: MockRequest) {
-  const resData = list[0].tags;
+  const resData: TagItem[] = [];
+  list.slice(0, 10).forEach((l) => {
+    resData.push(l.tags[0]);
+  });
   return {
     data: {
       pageSize: resData?.length,
@@ -133,7 +137,17 @@ function getTag(req: MockRequest) {
 }
 
 function getArticleByTag(req: MockRequest) {
-  const resData = list.slice(0, 10);
+  let resData: TagItem[] = [];
+  list.slice(0, 10).forEach((l) => {
+    resData.push({
+      ...l.tags[0],
+      articles: [l],
+    });
+  });
+  const id = req.body.tag_id;
+  if (id) {
+    resData = resData.filter((r) => r.id === id);
+  }
   return {
     data: {
       pageSize: resData.length,

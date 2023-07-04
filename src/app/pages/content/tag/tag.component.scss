@@ -5,7 +5,7 @@
   background-color: $white;
   padding: 12px;
   @include e(item) {
-    padding-bottom: 12px;
+    padding-bottom: 24px;
     h3 {
       color: $title-color;
       font-size: 30px;
