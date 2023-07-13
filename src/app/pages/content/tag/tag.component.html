@@ -2,14 +2,18 @@
   <div class="ng-blog-tag__items">
     <div class="ng-blog-tag__item" *ngFor="let item of tags">
       <h3>
-        <i nz-icon nzType="tags" nzTheme="outline"></i>&nbsp;&nbsp;{{ item.name }}
+        <i nz-icon nzType="tags" nzTheme="outline"></i>&nbsp;&nbsp;
+        {{ item.name }}
       </h3>
       <ul>
         <li *ngFor="let a of item['articles']">
-          <a [routerLink]="['/pages/content/detail', item.id]">
-            <span>{{ item.create_time | format }}</span>&nbsp;&nbsp;
-            {{ item.name }}&nbsp;&nbsp;
-            <i nz-icon nzType="read" nzTheme="outline"></i></a>
+          <a [routerLink]="['/pages/content/detail', a.id]">
+            <span>{{ a.create_time | format }}</span>
+            &nbsp;&nbsp;
+            <span>{{ a["title"] }}</span>
+            &nbsp;&nbsp;
+            <i nz-icon nzType="read" nzTheme="outline"></i
+          ></a>
         </li>
       </ul>
     </div>
