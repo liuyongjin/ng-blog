@@ -98,15 +98,35 @@ function getPigeonhole(req: MockRequest) {
     resData[t] = mock({
       [t + '|4-6']: [
         {
+          // id: Random.id(),
+          // config_dev: Random.integer(1, 1000),
+          // config_app: Random.integer(1, 1000),
+          // config_key: Random.integer(1, 1000),
+          // config_name: Random.title(),
+          // config_value: Random.integer(1, 1000),
+          // config_ext: mock('@csentence'),
+          // create_time: t + '-' + Random.datetime('MM-dd HH:mm:ss'),
+          // update_time: t + '-' + Random.datetime('MM-dd HH:mm:ss'),
           id: Random.id(),
-          config_dev: Random.integer(1, 1000),
-          config_app: Random.integer(1, 1000),
-          config_key: Random.integer(1, 1000),
-          config_name: Random.title(),
-          config_value: Random.integer(1, 1000),
-          config_ext: mock('@csentence'),
-          create_time: t + '-' + Random.datetime('MM-dd HH:mm:ss'),
-          update_time: t + '-' + Random.datetime('MM-dd HH:mm:ss'),
+          title: Random.name(),
+          create_time: Random.now('year'),
+          browse_count: Random.integer(1, 1000),
+          comment_count: Random.integer(1, 1000),
+          content:
+            '<p>' +
+            Random.cparagraph(20) +
+            '</p>' +
+            '<p>' +
+            Random.cparagraph(20) +
+            '</p>' +
+            '<p>' +
+            Random.cparagraph(20) +
+            '</p>',
+          des: mock('@csentence'),
+          main_img: Random.image(),
+          praise_count: Random.integer(1, 1000),
+          update_time: Random.now('year'),
+          status: Random.integer(1, 4),
         },
       ],
     })[t];
