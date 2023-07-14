@@ -4,6 +4,7 @@ import { MockRequest } from '@delon/mock';
 import { mock, Random } from 'mockjs';
 
 const list: ArticleItem[] = [];
+
 const total = 50;
 
 for (let i = 0; i < total; i += 1) {
