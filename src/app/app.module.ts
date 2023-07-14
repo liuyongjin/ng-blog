@@ -1,8 +1,4 @@
-import {
-  HashLocationStrategy,
-  LocationStrategy,
-  registerLocaleData,
-} from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
@@ -68,7 +64,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },
-    // { provide: LocationStrategy, useValue: HashLocationStrategy },
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: HTTP_INTERCEPTORS, useClass: BaseInterceptor, multi: true },
   ],
