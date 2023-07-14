@@ -34,7 +34,6 @@ export class TagComponent implements OnInit {
       .searchArticleByTag({ tag_id: id })
       .subscribe((res: TagResult) => {
         this.tags = res.data.data || [];
-        console.log(this.tags);
       });
   }
 }

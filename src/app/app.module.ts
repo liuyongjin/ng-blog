@@ -68,7 +68,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN },
-    { provide: LocationStrategy, useValue: HashLocationStrategy },
+    // { provide: LocationStrategy, useValue: HashLocationStrategy },
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: HTTP_INTERCEPTORS, useClass: BaseInterceptor, multi: true },
   ],
