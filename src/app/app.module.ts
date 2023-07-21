@@ -7,7 +7,10 @@ import {
 import zh from '@angular/common/locales/zh';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -63,6 +66,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NgProgressHttpModule,
   ],
   providers: [
+    provideClientHydration(),
     { provide: NZ_I18N, useValue: zh_CN },
     { provide: NZ_CONFIG, useValue: ngZorroConfig },
     { provide: HTTP_INTERCEPTORS, useClass: BaseInterceptor, multi: true },

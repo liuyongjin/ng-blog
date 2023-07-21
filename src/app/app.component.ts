@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { en_US, NzI18nService,zh_CN } from 'ng-zorro-antd/i18n';
+import { en_US, NzI18nService, zh_CN } from 'ng-zorro-antd/i18n';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private i18n: NzI18nService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: any
   ) {}
 
   ngOnInit() {
